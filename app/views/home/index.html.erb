@@ -1,0 +1,25 @@
+<%= render 'home/header' %>
+
+
+
+
+<br> <br>
+
+<h1 class="text-center">Welcome To Sam's Blog</h1><br><br>
+
+<div class="container">
+
+	<div class="jumbotron">
+
+	<% @articles.each do |article| %>
+
+ 	 	<h1 class="display-5"><%= article.title %></h1>
+  		<p class="lead"><%= article.description %></p><br>
+  	<%end%>
+  		
+</div>  
+
+
+</div>
+
+

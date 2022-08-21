@@ -1,0 +1,20 @@
+<%= render 'home/header' %>
+
+
+<br> <br>
+
+<div class="container">
+
+  <% @articles.each do |article| %>
+    <%= article.title %><br>
+    <%= article.description %><br>
+    <%= article_date(article) %><br>
+    <br>
+  <%end%>  
+
+
+<br>
+
+
+</div>
+

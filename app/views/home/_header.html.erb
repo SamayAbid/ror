@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <%= link_to "Sam's Blog", root_path , class: "navbar-brand " %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+       <li class="nav-item">
+          <%= link_to "Publisher", new_publisher_session_path , class:"nav-link"%>
+       </li>
+       <% if publisher_signed_in? %>
+        
+        <li class="nav-item">
+          <%= link_to "Articles", "/articles/table" , class:"nav-link"%>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Edit Profile", edit_publisher_registration_path , class:"nav-link"%>
+       </li>
+        <li class="nav-item">
+          <%= link_to "Logout", destroy_publisher_session_path, method: :delete, data:{confirm:"Do you want to Logout?"} , class:"nav-link"%>
+       </li>
+       <%end%>       
+      </ul>
+    </div>
+  </div>
+</nav>

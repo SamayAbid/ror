@@ -1,0 +1,27 @@
+<%= render "home/header" %>
+<br>
+<div class ="container">
+
+<h2>Resend Confirmation Instructions</h2>
+
+<div class="container p-4">
+<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "publishers/shared/error_messages", resource: resource %>
+
+  <div class="field">
+  
+    <%= f.email_field :email,class:"form-control", autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), placeholder: "E-mail" %>
+  </div>
+
+  <div class="actions">
+    <br>
+    <%= f.submit "Resend confirmation instructions" , class: "btn btn-dark"%>
+  </div> 
+<% end %>
+
+  <%= link_to "forgot your password?", new_publisher_password_path%><br><br>
+  <%= link_to "back", new_publisher_session_path, class:"btn btn-dark"%>
+
+</div>
+
+</div>
