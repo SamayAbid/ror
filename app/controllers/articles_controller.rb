@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :authenticate_publisher!, exccept: %i[index show]
+  before_action :authenticate_publisher!, except: %i[index show]
   # before_action :correct_user , only:[:edit,:update,:destroy]
 
   def index

@@ -34,13 +34,19 @@
 
    <div class="field form-group">
     <br>
-    <%= f.number_field :phone_no ,class: "form-control", placeholder: "Phone No" %><br>
+    <%= f.telephone_field :phone_no ,class: "form-control", placeholder: "Phone No" %><br>
   </div>
 
   <div class="field form-group">
     <br>
     <%= f.text_field  :address ,class: "form-control",  placeholder: "Address" %><br>
   </div>
+  
+  <div class="field form-group">
+    <br>
+    <%= f.file_field :avatar , class: "form-control", placeholder: "Upload Image" %><br>
+  </div> 
+
   
 
   <div class="actions">

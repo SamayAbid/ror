@@ -1,10 +1,10 @@
-<%= form_with model: @article do |form| %>
+<%= form_with model: @book , :remote => true do |form| %>
 	
 	<div class="container p-5">
 
 	<div class="form-group">
 		
-		<%= form.text_field :name , class:"form-control", placeholder: "Title"%>
+		<%= form.text_field :name , class:"form-control", placeholder: "Name"%>
 		<% @book.errors.full_messages_for(:name).each do |message|%>
 			<div>
 				<%=message%>
@@ -21,15 +21,13 @@
 			</div>
 		<%end%>	
 	</div>
-	<br>
-	<div class="form-group">
-		<%= form.number_field :publisher_id,id: :article_publisher_id,value: current_publisher.id, class: "form-control", type: :hidden%>
-	</div>
 
-	<br><br>
+
+
+	<br>
+	<br>
 	<div>
 		<%= form.submit class:"btn btn-dark" %><br><br>
-		<%= link_to "back" , articles_path , class: "btn btn-dark" %>
 	</div>
 
 	</div>

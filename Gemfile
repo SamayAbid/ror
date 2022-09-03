@@ -25,17 +25,29 @@ gem 'devise'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+gem 'jquery-rails'
+
+gem 'carrierwave'
+
+gem "strong_migrations"
+
+gem 'activeadmin'
+
 gem 'pg'
 
 gem 'bootstrap'
 
 gem 'rubocop'
 
+gem 'rspec-rails', '~> 5.0.1'
 
 gem "letter_opener", group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
+
+
+gem 'rails-controller-testing'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

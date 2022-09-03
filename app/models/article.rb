@@ -3,7 +3,7 @@ class Article < ApplicationRecord
   validates :description, presence: true, length: { minimum: 5 }
   belongs_to :publisher
 
-  before_update :change_article_title
+  #before_update :change_article_title
 
   # #def change_article_title
   # 	title = self.title

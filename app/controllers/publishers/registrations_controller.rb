@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class Publishers::RegistrationsController < Devise::RegistrationsController
-   #before_action :configure_sign_up_params, only: [:create]
+   
+
+   before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
@@ -10,13 +12,15 @@ class Publishers::RegistrationsController < Devise::RegistrationsController
   # end
 
   #POST /resource
-   def create
+   # def create
+   
+   # super  
+   # # if @publisher.save     
      
-     
-     super
-     PublisherMailer.with(publisher: @publisher).welcome_email.deliver_later
-     
-   end
+   # #   PublisherMailer.with(publisher: @publisher).welcome_email.deliver_later
+   # # end
+
+   # end
 
   # GET /resource/edit
   # def edit
@@ -46,7 +50,7 @@ class Publishers::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-     devise_parameter_sanitizer.permit(:sign_up, keys: %i[attribute phone_no address])
+     devise_parameter_sanitizer.permit(:sign_up, keys: [:phone_no, :address, :avatar])
    end
 
   # If you have extra params to permit, append them to the sanitizer.

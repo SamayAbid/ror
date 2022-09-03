@@ -1,11 +1,24 @@
 Rails.application.routes.draw do
-  root 'home#index'
+  
+ 
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  
+  ActiveAdmin.routes(self)
+
+
+  root 'books#index'
 
   devise_for :publishers , controllers: {
     sessions: 'publishers/sessions',
     registrations:  'publishers/registrations'
   }
 
+
+resources :books
+
+   # get "/books", to: "books#index"
+   # post "/books", to: "books#create"
+   # delete "/books/:id", to: "books#destroy"
 
 
   get '/articles/table', to: 'articles#table'
